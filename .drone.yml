@@ -1,0 +1,17 @@
+- name: publish-image  
+  image: plugins/docker
+  settings:
+    username: "debianmaster"
+    password:
+      from_secret: docker_password
+    repo: docker.io/debianmaster/helloworldapp
+    registry: docker.io
+    dockerfile: ./Dockerfile
+    tags:
+      - master
+  when:
+    event: [tag]
+    status: success
+    branch:
+      - master
+      - refs/tags/*
