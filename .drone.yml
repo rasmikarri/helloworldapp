@@ -15,7 +15,7 @@ steps:
     registry: docker.io
     dockerfile: ./Dockerfile
     auto_tag: true
-  trigger: 
+  when: 
     branch:
       - master
       - feature/*
