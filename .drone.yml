@@ -16,7 +16,6 @@ steps:
     dockerfile: ./Dockerfile
     tag: master
   when: 
-    branch:
-      - feature/*
-    event:
-    - pull_request
+    event: push
+    ref: [ refs/heads/feature/*, refs/tags/* ]
+    event: [ push, tag ]
