@@ -14,7 +14,7 @@ steps:
     repo: docker.io/debianmaster/helloworldapp
     registry: docker.io
     dockerfile: ./Dockerfile
-    tag: master
+    auto_tag: true
   when: 
     event: push
     ref: [ refs/heads/feature/*, refs/tags/* ]
