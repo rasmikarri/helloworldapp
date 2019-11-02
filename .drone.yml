@@ -17,7 +17,6 @@ steps:
     tag: master
   when: 
     branch:
-      - master
       - feature/*
     event:
     - pull_request
