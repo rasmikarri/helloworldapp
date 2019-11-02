@@ -30,7 +30,7 @@ steps:
     registry: docker.io
     dockerfile: ./Dockerfile
     tags: 
-    - ${DRONE_TAG}
+    - production
   when: 
     event: deployment
     environment: production
