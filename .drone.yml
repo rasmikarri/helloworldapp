@@ -14,7 +14,7 @@ steps:
     repo: docker.io/debianmaster/helloworldapp
     registry: docker.io
     dockerfile: ./Dockerfile
-    tags: master
+    tags: ${DRONE_BRANCH}
   when: 
     event: push
     ref: [ refs/heads/feature/*, refs/tags/* ]
