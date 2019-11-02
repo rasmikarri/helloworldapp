@@ -9,5 +9,6 @@ app.controller('statsCtrl', function($scope){
   $scope.bPercent = 50;
   $scope.whichEnv = window.location.hostname
   document.body.style.opacity=1;
+  
 });
 
