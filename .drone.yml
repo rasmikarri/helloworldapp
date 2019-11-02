@@ -1,3 +1,6 @@
+kind: pipeline
+name: build
+steps:
 - name: publish-image  
   image: plugins/docker
   settings:
