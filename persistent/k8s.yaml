@@ -1,0 +1,73 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  name: helloworld
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    run: helloworld
+status:
+  loadBalancer: {}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    run: helloworld
+  name: helloworld
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: helloworld
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: helloworld
+    spec:
+      containers:
+      - image: biqmind/helloworld
+        name: helloworld
+        ports:
+        - containerPort: 80
+        resources: {}
+        volumeMounts:
+        - mountPath: /usr/share/nginx/html/images
+          name: image-data
+      volumes:
+      - name: image-data
+        persistentVolumeClaim:
+          claimName: image-data
+status: {}
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hw-ingress
+spec:
+  rules:
+  - host: hello.eks.cape.sh
+    http:
+      paths:
+      - backend:
+          serviceName: helloworld
+          servicePort: 80
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: image-data
+spec:
+  accessModes:
+    - ReadWriteOnce
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 1Gi

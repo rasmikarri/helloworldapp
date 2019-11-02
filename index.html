@@ -9,6 +9,28 @@
     <meta name="keywords" content="docker-compose, docker, stack">
     <meta name="author" content="Docker">
     <link rel='stylesheet' href='style.css' />
+    <style>
+      div.gallery {
+        margin: 5px;
+        border: 1px solid #ccc;
+        float: left;
+        width: 180px;
+      }
+      
+      div.gallery:hover {
+        border: 1px solid #777;
+      }
+      
+      div.gallery img {
+        width: 100%;
+        height: auto;
+      }
+      
+      div.desc {
+        padding: 15px;
+        text-align: center;
+      }
+      </style>
   </head>
   <body ng-controller="statsCtrl" >
      <div id="background-stats">
@@ -18,6 +40,7 @@
       </div>
     </div>
     <div id="content-container">
+      <img src="images/img_5terre.jpg" alt="" width="300" height="200">
       <div id="content-container-center">
         <div id="choice">
           <div class="choice cats">
@@ -29,6 +52,7 @@
           </div>
         </div>
       </div>
+      <img src="images/img_5terre.jpg" alt="" width="300" height="200">
     </div>
     <div id="result">
       <span>{{ whichEnv }}</span>
