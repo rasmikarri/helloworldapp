@@ -21,6 +21,5 @@ steps:
       - feature/*
     event:
     - pull_request
-    - push
     - tag
     - promote
