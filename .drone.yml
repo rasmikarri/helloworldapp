@@ -1,5 +1,9 @@
 kind: pipeline
 name: build
+
+clone:
+  depth: 1
+
 steps:
 - name: publish-image  
   image: plugins/docker
@@ -11,10 +15,12 @@ steps:
     registry: docker.io
     dockerfile: ./Dockerfile
     auto_tag: true
-  when:
-    event: [tag,push]
-    status: success
+  trigger: 
     branch:
       - master
-      - refs/tags/*
       - feature/*
+    event:
+    - pull_request
+    - push
+    - tag
+    - promote
