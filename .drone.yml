@@ -10,12 +10,11 @@ steps:
     repo: docker.io/debianmaster/helloworldapp
     registry: docker.io
     dockerfile: ./Dockerfile
-    tags:
-      - master
-      - "${DRONE_TAG}"
+    auto_tag: true
   when:
     event: [tag,push]
     status: success
     branch:
       - master
       - refs/tags/*
+      - feature/*
