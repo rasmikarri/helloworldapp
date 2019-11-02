@@ -14,7 +14,7 @@ steps:
       - master
       - "${DRONE_TAG}"
   when:
-    event: [tag]
+    event: [tag,push]
     status: success
     branch:
       - master
