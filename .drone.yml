@@ -20,9 +20,12 @@ steps:
     - >
       echo $$test_secret > test.yaml
       cat test.yaml
-      echo $$test_secret2
-      echo ${test_secret}
-      echo $${test_secret}
+      echo $$test_secret2 > test.yaml
+      cat test.yaml
+      echo ${test_secret} > test.yaml
+      cat test.yaml
+      echo $${test_secret} > test.yaml
+      cat test.yaml
 
 - name: publish-image  
   image: plugins/docker
