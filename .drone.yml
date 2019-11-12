@@ -18,10 +18,10 @@ steps:
       from_secret: test_secret
   commands:
     - >
-    echo $$test_secret
-    echo $$test_secret2
-    echo ${test_secret}
-    echo $${test_secret}
+      echo $$test_secret
+      echo $$test_secret2
+      echo ${test_secret}
+      echo $${test_secret}
 
 - name: publish-image  
   image: plugins/docker
