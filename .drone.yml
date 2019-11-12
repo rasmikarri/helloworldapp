@@ -16,6 +16,7 @@ steps:
   settings:
     test_secret2:
       from_secret: test_secret
+  commands:
     - >
     echo $$test_secret
     echo $$test_secret2
