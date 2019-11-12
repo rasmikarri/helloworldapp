@@ -1,10 +1,27 @@
+---
+global-variables:
+  environment: &default_environment
+    test_secret:
+      from_secret: test_secret
+
 kind: pipeline
 name: build
-
 clone:
   depth: 1
-
 steps:
+- name: debug
+  image: biqmind/k8s-cli
+  environment:
+    <<: *default_environment
+  settings:
+    test_secret2:
+      from_secret: test_secret
+    - >
+    echo $$test_secret
+    echo $$test_secret2
+    echo ${test_secret}
+    echo $${test_secret}
+
 - name: publish-image  
   image: plugins/docker
   settings:
