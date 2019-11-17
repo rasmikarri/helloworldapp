@@ -3,7 +3,6 @@ global-variables:
   environment: &default_environment
     test_secret:
       from_secret: test_secret
-
 kind: pipeline
 name: build
 clone:
