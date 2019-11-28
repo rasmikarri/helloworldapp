@@ -46,7 +46,7 @@ metadata:
   name: hw-ingress
 spec:
   rules:
-  - host: hello.eks.cape.sh
+  - host: hw.harsh.stg.cape.sh
     http:
       paths:
       - backend:
