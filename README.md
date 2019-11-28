@@ -8,6 +8,8 @@ k apply -f k8s.yaml -n demo
 k get ing -n demo
 ```
 
+> Note: you can use `patch-ingress.sh` . file to patch ingress to a desired dns addr
+
 ## Stateful app demo
 > Make sure you have dynamic storage provider configured first
 ```sh
