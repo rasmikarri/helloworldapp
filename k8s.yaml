@@ -52,3 +52,29 @@ spec:
       - backend:
           serviceName: helloworld
           servicePort: 80
+ --------
+ apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hw2-ingress
+spec:
+  rules:
+  - host: hw2.harsh.stg.cape.sh
+    http:
+      paths:
+      - backend:
+          serviceName: helloworld
+          servicePort: 80
+-------------
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hw3-ingress
+spec:
+  rules:
+  - host: hw3.harsh.stg.cape.sh
+    http:
+      paths:
+      - backend:
+          serviceName: helloworld
+          servicePort: 80
