@@ -52,8 +52,8 @@ spec:
       - backend:
           serviceName: helloworld
           servicePort: 80
- --------
- apiVersion: extensions/v1beta1
+---
+apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: hw2-ingress
@@ -65,7 +65,7 @@ spec:
       - backend:
           serviceName: helloworld
           servicePort: 80
--------------
+---
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
